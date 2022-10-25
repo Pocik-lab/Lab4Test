@@ -29,7 +29,10 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
+      uses: nuget/setup-nuget@v1
+      with:
+        nuget-api-key: ${{ secrets.NuGetAPIKey }}
+        nuget-version: '5.x'
     - name: Restore Packages
       run: nuget restore TestLab4.sln
     - name: Build
