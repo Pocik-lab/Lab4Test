@@ -23,6 +23,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: msbuild build --no-restore
+      run: |
+           cd "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe $Env:GITHUB_WORKSPACE\ TestLab4.csproj
     - name: Test
       run: dotnet test --no-build --verbosity normal
