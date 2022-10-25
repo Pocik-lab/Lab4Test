@@ -38,6 +38,8 @@ namespace TestProject1
 
         private ICalculatorPresenter calculatorPresenter;
         private TestCalcView calcView;
+
+        [Fact]
         public void Setup()
         {
             calcView = new TestCalcView();
