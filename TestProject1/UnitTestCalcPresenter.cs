@@ -48,7 +48,7 @@ namespace TestProject1
 
         [Theory]
         [InlineData("1", "2", "3")]
-        [InlineData("0,1", "0,2", "0,3")]
+        [InlineData("0.1", "0.2", "0.3")]
         [InlineData("-1", "-2", "-3")]
         [InlineData("x", "y", "0")]
         [InlineData("x", "1", "1")]
@@ -67,7 +67,7 @@ namespace TestProject1
         [Theory]
         [InlineData("1", "2", "-1")]
         [InlineData("-1", "-2", "1")]
-        [InlineData("0,1", "0,2", "-0,1")]
+        [InlineData("0.1", "0.2", "-0.1")]
         [InlineData("x", "y", "0")]
         [InlineData("x", "1", "-1")]
         [InlineData("1", "y", "1")]
@@ -86,7 +86,7 @@ namespace TestProject1
         [InlineData("1", "2", "2")]
         [InlineData("-1", "2", "-2")]
         [InlineData("-1", "-2", "2")]
-        [InlineData("0,1", "0,2", "0,02")]
+        [InlineData("0.1", "0.2", "0.02")]
         [InlineData("x", "y", "0")]
         [InlineData("x", "1", "0")]
         [InlineData("1", "y", "0")]
@@ -104,7 +104,7 @@ namespace TestProject1
         [Theory]
         [InlineData("2", "1", "2")]
         [InlineData("2", "-1", "-2")]
-        [InlineData("0,02", "0,1", "0,2")]
+        [InlineData("0.02", "0.1", "0.2")]
         [InlineData("x", "y", null)]
         [InlineData("x", "1", "0")]
         [InlineData("1", "y", null)]
@@ -166,10 +166,10 @@ namespace TestProject1
 
         [Theory]
         [InlineData("1", "0", "Division by zero")]
-        [InlineData("1", "0,00000001", "Division by zero")]
-        [InlineData("1", "0,000000009", "Division by zero")]
-        [InlineData("1", "-0,00000001", "Division by zero")]
-        [InlineData("1", "-0,000000009", "Division by zero")]
+        [InlineData("1", "0.00000001", "Division by zero")]
+        [InlineData("1", "0.000000009", "Division by zero")]
+        [InlineData("1", "-0.00000001", "Division by zero")]
+        [InlineData("1", "-0.000000009", "Division by zero")]
         [InlineData("1", "", "Empty parameter")]
         [InlineData("", "1", "Empty parameter")]
         [InlineData("", "", "Empty parameter")]
@@ -185,8 +185,8 @@ namespace TestProject1
         }
 
         [Theory]
-        [InlineData("1", "0,000000011", "Division by zero")]
-        [InlineData("1", "-0,000000011", "Division by zero")]
+        [InlineData("1", "0.000000011", "Division by zero")]
+        [InlineData("1", "-0.000000011", "Division by zero")]
         public void TestOnDivideClickedNotThrowsException(string a, string b, string res)
         {
             Setup();
