@@ -32,7 +32,7 @@ jobs:
       uses: nuget/setup-nuget@v1
       with:
         nuget-api-key: ${{ secrets.NuGetAPIKey }}
-        nuget-version: '5.x'
+        nuget-version: '6.x'
     - name: Restore Packages
       run: nuget restore TestLab4.sln
     - name: Build
