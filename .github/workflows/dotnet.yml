@@ -29,8 +29,6 @@ jobs:
         nuget-version: '6.x'
     - name: Restore Packages
       run: nuget restore TestLab4.sln
-    - name: Restore dependencies
-      run: msbuild restore TestLab4.sln
     - name: Build
       run: |
            msbuild.exe TestLab4.sln
