@@ -16,10 +16,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.0.x
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
     - name: Navigate to Workspace
@@ -27,7 +23,7 @@ jobs:
     - name: Create Build Directory
       run: mkdir _build
     - name: Restore dependencies
-      run: dotnet restore
+      run: msbuild restore
     - name: Setup NuGet
       uses: nuget/setup-nuget@v1
       with:
@@ -39,4 +35,4 @@ jobs:
       run: |
            msbuild.exe TestLab4.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: msbuild test --no-build --verbosity normal
